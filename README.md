@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Stable Diffusion Art
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This was created by ChatGPT (and with my assistance) for use by kids with autism, to get AI generated images using emojis.
+
+Based on tweet: https://twitter.com/clairesilver12/status/1641230887085015041?s=46&t=3waaoBsCSPPFKfnk2RJb6g
+
+The project is open-source, feel free to use it however.
+
+It uses OpenAI's API to interact with ChatGPT and DALL-E.
+
+You will have to adjust to your API key.
 
 ## Available Scripts
 
