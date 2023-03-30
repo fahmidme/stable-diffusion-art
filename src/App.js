@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import "./loadingAnimation.css";
 import Toolbar from "./components/Toolbar";
 import ArtElementMenu from "./components/ArtElementMenu";
 import ColorPalette from "./components/ColorPalette";
@@ -10,13 +11,18 @@ import { generateImage } from "./api/dalle";
 
 function App() {
   const [imageUrl, setImageUrl] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleElementClick = async (element) => {
     console.log(`Selected element: ${element}`);
 
-    const prompt = `A ${element} created with stable diffusion --version 3 --s 1250 --uplight --ar 4:3 --no text, blur`;
+    setLoading(true); // Set loading to true
+
+    const prompt = `A ${element} created with stable diffusion.`;
     const newImageUrl = await generateImage(prompt);
     setImageUrl(newImageUrl);
+
+    setLoading(false); // Set loading back to false
   };
 
   const handleColorSelect = (color) => {
@@ -33,6 +39,19 @@ function App() {
       </div>
       <Controls />
       <Settings />
+      {loading && (
+        <div
+          style={{
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 999,
+          }}
+        >
+          <div className="loading-spinner"></div>
+        </div>
+      )}
     </div>
   );
 }
