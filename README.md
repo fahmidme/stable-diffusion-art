@@ -1,5 +1,7 @@
 # Stable Diffusion Art
 
+<img width="1436" alt="Screenshot 2023-03-29 at 9 09 10 PM" src="https://user-images.githubusercontent.com/16950663/228701939-9b6b4f6c-1774-4d69-95fa-6c4ea4982756.png">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 This was created by ChatGPT (and with my assistance) for use by kids with autism, to get AI generated images using emojis.
