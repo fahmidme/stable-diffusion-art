@@ -14,6 +14,8 @@ It uses OpenAI's API to interact with ChatGPT and DALL-E.
 
 You will have to adjust to your API key.
 
+Find the backend here: https://github.com/fahmidme/diffusion-art-backend
+
 ## Available Scripts
 
 In the project directory, you can run:
