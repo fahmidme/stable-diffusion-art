@@ -23,11 +23,27 @@ const Canvas = ({ imageUrl }) => {
 
   const drawImage = () => {
     if (canvasRef.current && image) {
-      const ctx = canvasRef.current.getContext('2d');
+      const ctx = canvasRef.current.getContext("2d");
       ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-      ctx.drawImage(image, 0, 0, image.width, image.height);
+  
+      // Calculate the scale factor to fit the image within the canvas
+      const scaleFactor = Math.min(
+        canvasRef.current.width / image.width,
+        canvasRef.current.height / image.height
+      );
+  
+      // Calculate the new dimensions of the image
+      const newWidth = image.width * scaleFactor;
+      const newHeight = image.height * scaleFactor;
+  
+      // Calculate the position to center the image
+      const offsetX = (canvasRef.current.width - newWidth) / 2;
+      const offsetY = (canvasRef.current.height - newHeight) / 2;
+  
+      // Draw the image on the canvas
+      ctx.drawImage(image, offsetX, offsetY, newWidth, newHeight);
     }
-  };
+  };  
 
   useEffect(() => {
     drawImage();

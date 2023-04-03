@@ -18,7 +18,7 @@ function App() {
 
     setLoading(true); // Set loading to true
 
-    const prompt = `A ${element} created with stable diffusion.`;
+    const prompt = `A friendly cartoon ${element}, perfect for children's art, created with stable diffusion.`;
     const newImageUrl = await generateImage(prompt);
     setImageUrl(newImageUrl);
 
